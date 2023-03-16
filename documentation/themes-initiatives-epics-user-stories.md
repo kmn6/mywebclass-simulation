@@ -116,9 +116,9 @@ As a website developer, I want to research best practices and consult with SEO e
 ### Epic: Develop Performance Test Framework with Playwright
 
 User Stories:
-- As a QA engineer, I want to create a performance test framework using Playwright that can be used to measure site performance in the browser
-- As a QA engineer, I want to integrate the performance test framework with our CI/CD pipeline
-- As a QA engineer, I want to capture and analyze performance data from the automated tests
+* As a QA engineer, I want to create a performance test framework using Playwright that can be used to measure site performance in the browser
+* As a QA engineer, I want to integrate the performance test framework with our CI/CD pipeline
+* As a QA engineer, I want to capture and analyze performance data from the automated tests
 
 # Theme: Responsive Content Template and Homepage
 
@@ -126,12 +126,14 @@ User Stories:
 
 ### Epic: Develop Responsive Content Template
 User Stories:
-- User Story: As a developer, I want to build and test the responsive content template across different screen sizes and devices
-- User Story: As a QA engineer, I want to test the responsive content template to ensure it meets design requirements and works correctly on different devices
+* User Story: As a developer, I want to build and test the responsive content template across different screen sizes and devices
+* User Story: As a QA engineer, I want to test the responsive content template to ensure it meets design requirements and works correctly on different devices
+
 
 ### Epic: Create Homepage Design
-- User Story: As a developer, I want to build and test the homepage design, ensuring that it integrates with the responsive content template
-- User Story:: As a QA engineer, I want to test the homepage design to ensure it meets design requirements and works correctly on different devices
+* User Story: As a developer, I want to build and test the homepage design, ensuring that it integrates with the responsive content template
+* User Story:: As a QA engineer, I want to test the homepage design to ensure it meets design requirements and works correctly on different devices
+
 # Website Legal Research, Implementation, Testing, and Issue Resolutions
 ## Initiative: Legal Compliance for Website Development
 
