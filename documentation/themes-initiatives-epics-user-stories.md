@@ -128,7 +128,7 @@ User Stories:
 User Stories:
 * User Story: As a developer, I want to build and test the responsive content template across different screen sizes and devices
 * User Story: As a QA engineer, I want to test the responsive content template to ensure it meets design requirements and works correctly on different devices
-
+* As a user, I would like to consistently view the same navigation bar on all pages so that I can browse the website without getting lost.
 
 ### Epic: Create Homepage Design
 * User Story: As a developer, I want to build and test the homepage design, ensuring that it integrates with the responsive content template
