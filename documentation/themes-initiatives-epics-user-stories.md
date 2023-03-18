@@ -37,9 +37,10 @@ As a user of the website, I want to be able to view the website in my preferred 
 
 #### User Stories:
 
-*As a website user, I want to be able to choose my preferred language from a language dropdown menu, so that the website can be translated into the language of my choice.
+* As a website user, I want to be able to choose my preferred language from a language dropdown menu, so that the website can be translated into the language of my choice.
 * As a website administrator, I want to be able to add new languages to the website, so that users from different countries can use the website in their native language.
 * As a website user, I want the language localization to be consistent across all pages, so that I can easily navigate the website without confusion.
+
 ### Epic 2: Date and Time Formatting
 As a user of the website, I want the date and time to be displayed in a format that is familiar to me, based on my location.
 
