@@ -114,12 +114,17 @@ As a website developer, I want to research best practices and consult with SEO e
 
 ## Initiative: Automated Site Performance Testing
 
-### Epic: Develop Performance Test Framework with Playwright
+### Epic: Develop Automated Testing Framework with Playwright
 
 User Stories:
 * As a QA engineer, I want to create a performance test framework using Playwright that can be used to measure site performance in the browser
 * As a QA engineer, I want to integrate the performance test framework with our CI/CD pipeline
 * As a QA engineer, I want to capture and analyze performance data from the automated tests
+
+### Epic: Develop Performance Testing with Lighthouse
+
+User Stories:
+* 
 
 # Theme: Responsive Content Template and Homepage
 
