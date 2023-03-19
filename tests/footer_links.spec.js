@@ -35,7 +35,7 @@ test('test-valid-footer-links', async ({browser}) => {
 
 test('footer-contains-correct-links-and-wording', async ({page}) => {
     // 2d array of [words,link]
-    const expectedNavbarLinks = [ ["Privacy Policy", "/privacy.html"],
+    const expectedFooterLinks = [ ["Privacy Policy", "/privacy.html"],
                                   ["Contact","/contact.html"]
     ]
 
@@ -50,9 +50,9 @@ test('footer-contains-correct-links-and-wording', async ({page}) => {
             const textContent = await link.textContent()
             const linkedUrl = await link.getAttribute("href")
 
-            console.log("Checking " + pageToCheck + " has " + expectedNavbarLinks[i][0] + " linking to " + expectedNavbarLinks[i][1])
-            expect (textContent).toBe(expectedNavbarLinks[i][0])
-            expect (linkedUrl).toBe(expectedNavbarLinks[i][1])
+            console.log("Checking " + pageToCheck + " has " + expectedFooterLinks[i][0] + " linking to " + expectedFooterLinks[i][1])
+            expect (textContent).toBe(expectedFooterLinks[i][0])
+            expect (linkedUrl).toBe(expectedFooterLinks[i][1])
 
         }
 
