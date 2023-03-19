@@ -37,9 +37,10 @@ As a user of the website, I want to be able to view the website in my preferred 
 
 #### User Stories:
 
-*As a website user, I want to be able to choose my preferred language from a language dropdown menu, so that the website can be translated into the language of my choice.
+* As a website user, I want to be able to choose my preferred language from a language dropdown menu, so that the website can be translated into the language of my choice.
 * As a website administrator, I want to be able to add new languages to the website, so that users from different countries can use the website in their native language.
 * As a website user, I want the language localization to be consistent across all pages, so that I can easily navigate the website without confusion.
+
 ### Epic 2: Date and Time Formatting
 As a user of the website, I want the date and time to be displayed in a format that is familiar to me, based on my location.
 
@@ -113,12 +114,17 @@ As a website developer, I want to research best practices and consult with SEO e
 
 ## Initiative: Automated Site Performance Testing
 
-### Epic: Develop Performance Test Framework with Playwright
+### Epic: Develop Automated Testing Framework with Playwright
 
 User Stories:
-- As a QA engineer, I want to create a performance test framework using Playwright that can be used to measure site performance in the browser
-- As a QA engineer, I want to integrate the performance test framework with our CI/CD pipeline
-- As a QA engineer, I want to capture and analyze performance data from the automated tests
+* As a QA engineer, I want to create a performance test framework using Playwright that can be used to measure site performance in the browser
+* As a QA engineer, I want to integrate the performance test framework with our CI/CD pipeline
+* As a QA engineer, I want to capture and analyze performance data from the automated tests
+
+### Epic: Develop Performance Testing with Lighthouse
+
+User Stories:
+* 
 
 # Theme: Responsive Content Template and Homepage
 
@@ -126,12 +132,14 @@ User Stories:
 
 ### Epic: Develop Responsive Content Template
 User Stories:
-- User Story: As a developer, I want to build and test the responsive content template across different screen sizes and devices
-- User Story: As a QA engineer, I want to test the responsive content template to ensure it meets design requirements and works correctly on different devices
+* As a developer, I want to build and test the responsive content template across different screen sizes and devices
+* As a QA engineer, I want to test the responsive content template to ensure it meets design requirements and works correctly on different devices
+* As a user, I would like to consistently view the same navigation bar on all pages so that I can browse the website without getting lost.
 
 ### Epic: Create Homepage Design
-- User Story: As a developer, I want to build and test the homepage design, ensuring that it integrates with the responsive content template
-- User Story:: As a QA engineer, I want to test the homepage design to ensure it meets design requirements and works correctly on different devices
+* As a developer, I want to build and test the homepage design, ensuring that it integrates with the responsive content template
+* As a QA engineer, I want to test the homepage design to ensure it meets design requirements and works correctly on different devices
+
 # Website Legal Research, Implementation, Testing, and Issue Resolutions
 ## Initiative: Legal Compliance for Website Development
 
