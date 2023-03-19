@@ -105,25 +105,66 @@
 	</footer>
 
 
-	<!-- Modal -->
-	<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  <div class="modal-dialog">
+	<!-- Privacy Modal -->
+	<div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered modal-lg">
 		<div class="modal-content">
 		  <div class="modal-header">
-			<h5 class="modal-title" id="exampleModalLabel">Terms of Service</h5>
+			<h2 class="modal-title" id="privacyModalLabel">Privacy Policy</h2>
 			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		  </div>
 		  <div class="modal-body">
-			<!-- Terms of service text goes here -->
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel nibh in felis lacinia sagittis. Nullam ut lectus ipsum. Suspendisse ut tincidunt lorem. Duis vitae libero vitae sapien accumsan dignissim id vel lorem. Sed id enim non leo efficitur eleifend. </p>
+			<!-- Privacy Policy Content Goes Here -->
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 		  </div>
 		  <div class="modal-footer">
-			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-			<button type="button" class="btn btn-primary" id="acceptBtn">Accept</button>
+			<button type="button" class="btn btn-danger" id="declineBtn">Decline</button>
+			<button type="button" class="btn btn-success" id="acceptBtn">Accept</button>
 		  </div>
 		</div>
 	  </div>
 	</div>
+
+	<script>
+	  // Get a reference to the Accept and Decline buttons
+	  var acceptBtn = document.getElementById('acceptBtn');
+	  var declineBtn = document.getElementById('declineBtn');
+
+	  // Check if the privacyAccepted cookie is set
+	  var cookies = document.cookie.split(';');
+	  var privacyAccepted = false;
+	  for (var i = 0; i < cookies.length; i++) {
+		var cookie = cookies[i].trim();
+		if (cookie.indexOf('privacyAccepted=') === 0) {
+		  privacyAccepted = true;
+		  break;
+		}
+	  }
+
+	  if (!privacyAccepted) {
+		// Listen for clicks on the Accept button
+		acceptBtn.addEventListener('click', function() {
+		  // Set a cookie to remember that the privacy policy has been accepted
+		  document.cookie = 'privacyAccepted=true; path=/';
+
+		  // Close the modal
+		  var privacyModal = document.getElementById('privacyModal');
+		  var modalInstance = bootstrap.Modal.getInstance(privacyModal);
+		  modalInstance.hide();
+		});
+
+		// Listen for clicks on the Decline button
+		declineBtn.addEventListener('click', function() {
+		  // Redirect to Google
+		  window.location.href = 'https://www.google.com/';
+		});
+
+		// Show the modal when the page is loaded
+		var privacyModal = document.getElementById('privacyModal');
+		var modalInstance = new bootstrap.Modal(privacyModal);
+		modalInstance.show();
+	  }
+	</script>
 
 	<!-- <script src="../js/template-content.js"></script> -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
