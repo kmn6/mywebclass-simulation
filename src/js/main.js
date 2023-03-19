@@ -106,6 +106,6 @@ function loadGoogleAnalytics () {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  createPrivacyModal()
+//  createPrivacyModal()
   loadGoogleAnalytics()
 })
