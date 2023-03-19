@@ -16,7 +16,10 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-870X719634');
+  gtag('config', 'G-870X719634',
+    'anonymize_ip': true,
+    'storage': 'none'
+  );
 </script>
 
 </head>
@@ -88,11 +91,19 @@
 	</main>
 
 
-    <footer class="bg-light py-3">
-      <div class="container text-center">
-        <p>&copy; 2023 Tutorial Website. All rights reserved.</p>
-      </div>
-    </footer>
+	<footer class="bg-light py-3">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 text-center text-md-start">
+					<p class="text-dark">Copyright © 2023 MyWebClass</p>
+				</div>
+				<div class="col-md-6 text-center text-md-end">
+					<a href="/privacy.html" class="text-dark">Privacy Policy</a> | <a href="/contact.html" class="text-dark">Contact</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
 
 	<!-- Privacy Modal -->
 	<div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
