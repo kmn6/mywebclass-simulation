@@ -38,8 +38,6 @@ test('navbar-contains-correct-links-and-wording', async ({page}) => {
     ]
 
     for (const pageToCheck of pagesToCheck) {
-        console.log("Checking page " + pageToCheck)
-
         await page.goto(pageToCheck)
         const links = await page.$$(".navbar .nav-link")
 
@@ -48,7 +46,7 @@ test('navbar-contains-correct-links-and-wording', async ({page}) => {
             const textContent = await link.textContent()
             const linkedUrl = await link.getAttribute("href")
 
-            console.log("Checking for " + expectedNavbarLinks[i][0] + " linking to " + expectedNavbarLinks[i][1])
+            console.log("Checking page " + pageToCheck + " for " + expectedNavbarLinks[i][0] + " linking to " + expectedNavbarLinks[i][1])
             expect (textContent).toBe(expectedNavbarLinks[i][0])
             expect (linkedUrl).toBe(expectedNavbarLinks[i][1])
 
