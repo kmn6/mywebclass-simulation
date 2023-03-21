@@ -41,6 +41,10 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/sitemap.xml'),
           to: path.resolve(__dirname, 'docs')
+        },
+        {
+          from: path.resolve(__dirname, 'src/sitemap.txt'), // Add this pattern
+          to: path.resolve(__dirname, 'docs')
         }
       ],
     })
