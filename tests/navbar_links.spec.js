@@ -1,24 +1,22 @@
 const { test, expect } = require('@playwright/test')
 
-const pagesToCheck = ['index.html',
-                      'template-content.html',
-]
+const pages = ['index.html', 'template-content.html', 'contact.html'];
 
-test('test-valid-navbar-links', async ({browser}) => {
-    const context = await browser.newContext()
-    const page = await context.newPage()
+const expectedNavbarLinks = [ ["Home",             "index.html"],
+                              ["Content Template", "template-content.html"]]
 
-    for (const pageToCheck of pagesToCheck) {
-        console.log("Checking page " + pageToCheck)
 
-        await page.goto(pageToCheck)
+for (const pageUrl of pages) {
+    test(`Test Valid Navbar Links - ${pageUrl}`, async ({browser}) => {
+        const context = await browser.newContext()
+        const page = await context.newPage()
+
+        await page.goto(pageUrl)
         const links = await page.$$(".navbar .nav-link")
 
         for (const link of links) {
             const url = await link.getAttribute('href')
-            console.log("Checking link " + url)
             if (url.startsWith('#')) {
-                console.log(`Skipping link "${url}" because it is not a new page.`)
                 continue
             }
 
@@ -29,16 +27,10 @@ test('test-valid-navbar-links', async ({browser}) => {
 
             await newPage.close()
         }
-    }
-})
+    })
 
-test('navbar-contains-correct-links-and-wording', async ({page}) => {
-    const expectedNavbarLinks = [ ["Home", "index.html"],
-                                  ["Content Template", "template-content.html"]
-    ]
-
-    for (const pageToCheck of pagesToCheck) {
-        await page.goto(pageToCheck)
+    test(`Navbar has the Correct Links - ${pageUrl}`, async ({page}) => {
+        await page.goto(pageUrl)
         const links = await page.$$(".navbar .nav-link")
 
         for (let i = 0; i < links.length; i++) {
@@ -46,11 +38,8 @@ test('navbar-contains-correct-links-and-wording', async ({page}) => {
             const textContent = await link.textContent()
             const linkedUrl = await link.getAttribute("href")
 
-            console.log("Checking page " + pageToCheck + " for " + expectedNavbarLinks[i][0] + " linking to " + expectedNavbarLinks[i][1])
             expect (textContent).toBe(expectedNavbarLinks[i][0])
             expect (linkedUrl).toBe(expectedNavbarLinks[i][1])
-
         }
-
-    }
-})
+    })
+}
