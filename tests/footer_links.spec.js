@@ -1,25 +1,22 @@
 const { test, expect } = require('@playwright/test')
 
-const pagesToCheck = ['index.html',
-                      'contact.html',
-                      'template-content.html',
-]
+const pages = ['index.html', 'template-content.html', 'contact.html'];
 
-test('test-valid-footer-links', async ({browser}) => {
-    const context = await browser.newContext()
-    const page = await context.newPage()
+const expectedFooterLinks = [ ["Privacy Policy", "privacy.html"],
+                              ["Contact",        "contact.html"] ]
 
-    for (const pageToCheck of pagesToCheck) {
-        // console.log("Checking page " + pageToCheck)
 
-        await page.goto(pageToCheck)
+for (const pageUrl of pages) {
+    test(`Test Valid Footer Links - ${pageUrl}`, async ({browser}) => {
+        const context = await browser.newContext()
+        const page = await context.newPage()
+
+        await page.goto(pageUrl)
         const links = await page.$$("footer a")
 
         for (const link of links) {
             const url = await link.getAttribute('href')
-            console.log("Checking " + pageToCheck + " for valid footer link to " + url)
             if (url.startsWith('#')) {
-                console.log(`Skipping link "${url}" because it is not a new page.`)
                 continue
             }
 
@@ -30,19 +27,10 @@ test('test-valid-footer-links', async ({browser}) => {
 
             await newPage.close()
         }
-    }
-})
+    })
 
-test('footer-contains-correct-links-and-wording', async ({page}) => {
-    // 2d array of [words,link]
-    const expectedFooterLinks = [ ["Privacy Policy", "privacy.html"],
-                                  ["Contact","contact.html"]
-    ]
-
-    for (const pageToCheck of pagesToCheck) {
-        // console.log("Checking page " + pageToCheck)
-
-        await page.goto(pageToCheck)
+    test(`Footer has the Correct Links - ${pageUrl}`, async ({page}) => {
+        await page.goto(pageUrl)
         const links = await page.$$("footer a")
 
         for (let i = 0; i < links.length; i++) {
@@ -50,11 +38,10 @@ test('footer-contains-correct-links-and-wording', async ({page}) => {
             const textContent = await link.textContent()
             const linkedUrl = await link.getAttribute("href")
 
-            console.log("Checking " + pageToCheck + " has " + expectedFooterLinks[i][0] + " linking to " + expectedFooterLinks[i][1])
             expect (textContent).toBe(expectedFooterLinks[i][0])
             expect (linkedUrl).toBe(expectedFooterLinks[i][1])
 
         }
+    })
 
-    }
-})
+}
