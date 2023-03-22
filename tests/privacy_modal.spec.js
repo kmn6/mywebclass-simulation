@@ -2,8 +2,8 @@ const { test, expect } = require('@playwright/test');
 
 const pages = ['index.html', 'template-content.html', 'contact.html'];
 
-for (const pageURL of pages) {
-    test(`Privacy Modal Test - ${pageURL}`, async ({ browser }) => {
+for (const pageUrl of pages) {
+    test(`Privacy Modal Test - ${pageUrl}`, async ({ browser }) => {
         const context = await browser.newContext();
         const page = await context.newPage();
 
@@ -11,7 +11,7 @@ for (const pageURL of pages) {
         await context.clearCookies();
 
         // Navigate to the page
-        await page.goto(pageURL);
+        await page.goto(pageUrl);
 
         // Check that the modal appears
         const modal = await page.$('#privacyModal');
