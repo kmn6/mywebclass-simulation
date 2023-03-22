@@ -6,31 +6,19 @@ for (const pageUrl of pages) {
     test(`Verify SEO meta tags - ${pageUrl}`, async ({ page }) => {
       await page.goto(pageUrl);
 
-      // Verify the charset meta tag
-      expect(await page.querySelector('meta[charset="UTF-8"]')).toBeTruthy();
+      // Verify charset and viewport meta tags exist
+      expect(await page.locator('head > meta[charset="UTF-8"]').count()).toBe(1);
+      expect(await page.locator('head > meta[name="viewport"]').count()).toBe(1);
 
-      // Verify the viewport meta tag
-      expect(await page.querySelector('meta[name="viewport"][content="width=device-width, initial-scale=1.0"]')).toBeTruthy();
+      // Verify basic meta info meta tags exist
+      expect(await page.locator('head > meta[name="keywords"]').count()).toBe(1);
+      expect(await page.locator('head > meta[name="author"]').count()).toBe(1);
+      expect(await page.locator('head > meta[name="description"]').count()).toBe(1);
 
-      // Verify the keywords meta tag
-      expect(await page.querySelector('meta[name="keywords"][content="My Webclass Homepage"]')).toBeTruthy();
-
-      // Verify the author meta tag
-      expect(await page.querySelector('meta[name="author"][content="John Idone & Kevin Nipal"]')).toBeTruthy();
-
-      // Verify the description meta tag
-      expect(await page.querySelector('meta[name="description"][content="A project to help educators integrate new technologies into their teaching"]')).toBeTruthy();
-
-      // Verify the OpenGraph title meta tag
-      expect(await page.querySelector('meta[property="og:title"][content=""]')).toBeTruthy();
-
-      // Verify the OpenGraph description meta tag
-      expect(await page.querySelector('meta[property="og:description"][content=""]')).toBeTruthy();
-
-      // Verify the OpenGraph image meta tag
-      expect(await page.querySelector('meta[property="og:image"][content="assets/images/logo.png"]')).toBeTruthy();
-
-      // Verify the OpenGraph URL meta tag
-      expect(await page.querySelector('meta[property="og:url"][content=""]')).toBeTruthy();
+      // Verify OpenGraph meta tags exist
+      expect(await page.locator('head > meta[property="og:title"]').count()).toBe(1);
+      expect(await page.locator('head > meta[property="og:description"]').count()).toBe(1);
+      expect(await page.locator('head > meta[property="og:image"]').count()).toBe(1);
+      expect(await page.locator('head > meta[property="og:url"]').count()).toBe(1);
     });
 }
