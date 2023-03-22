@@ -21,7 +21,6 @@ module.exports = {
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, './docs'),
-    publicPath: '/mywebclass-simulation/',
     clean: true
   },
   devtool: 'source-map',
