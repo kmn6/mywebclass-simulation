@@ -1,7 +1,7 @@
 const { test } = require('@playwright/test')
 const { axe, injectAxe, checkA11y } = require('axe-playwright')
 
-const pages = ['index.html', 'template-content.html', 'contact.html'];
+const pages = ['index.html', 'template-content.html', 'contact.html','privacy.html'];
 
 for (const pageUrl of pages) {
     test(`Test Accessibility - ${pageUrl}`, async ({ page }) => {
