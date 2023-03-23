@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-const pages = ['index.html', 'template-content.html', 'contact.html'];
+const pages = ['index.html', 'template-content.html', 'contact.html','privacy.html'];
 
 for (const pageUrl of pages) {
     test(`Verify SEO meta tags - ${pageUrl}`, async ({ page }) => {
