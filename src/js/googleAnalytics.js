@@ -21,17 +21,18 @@ const updateConsentState = (adStorage, analyticsStorage) => {
   });
 };
 
+// Wait for the page to finish loading
 window.addEventListener('load', function() {
     // Get the button element by its ID
     const acceptButton = document.getElementById('acceptBtn');
-
+    // Add a click event listener to the button
     acceptButton.addEventListener('click', () => {
     // Call the updateConsentState function with the desired consent state
     updateConsentState('granted', 'granted');
   });
 });
 
-  // Add a click event listener to the button
+
 
 
 // Check for the privacyAccepted cookie and update the gtag state if present
