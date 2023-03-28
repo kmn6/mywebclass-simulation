@@ -18,7 +18,7 @@ while (directories.length > 0) {
 
 module.exports = {
   mode: 'development',
-  entry: './src/js/main.js',
+  entry: ['./src/js/main.js','./src/js/privacyModal.js','./src/js/googleAnalytics.js'],
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, './docs'),
