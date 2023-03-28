@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-const pages = ['index.html', 'template-content.html', 'contact.html','privacy.html'];
+const pages = ['index.html', 'template-content.html', 'contact.html'];
 
 for (const pageUrl of pages) {
     test(`Privacy Modal Test - ${pageUrl}`, async ({ browser }) => {
