@@ -1,6 +1,8 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const fs = require('fs')
+const CopyWebpackPlugin = require('copy-webpack-plugin') // ADDED THIS LINE
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 // Look for .html files
 const htmlFiles = []
@@ -34,7 +36,20 @@ module.exports = {
         filename: htmlFile.replace(path.normalize('src/'), ''),
         inject: true
       })
-    )
+    ),
+    new CopyWebpackPlugin({ // ADD THIS BLOCK
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/sitemap.xml'),
+          to: path.resolve(__dirname, 'docs')
+        },
+        {
+          from: path.resolve(__dirname, 'src/sitemap.txt'), // Add this pattern
+          to: path.resolve(__dirname, 'docs')
+        }
+      ]
+    }),
+    new BundleAnalyzerPlugin()
   ],
   module: {
     rules: [

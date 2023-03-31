@@ -7,9 +7,10 @@ on:
       - 'development'
     tags:
       - 'v*'
+  workflow_dispatch:
 
 env:
-  DOCKER_REPO_NAME: kaw393939/mywebclass
+  DOCKER_REPO_NAME: jgi2/mywebclass
 
 jobs:
   build:
